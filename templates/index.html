@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <title>Rent Predictions</title>
+  <style>
+    .radio input~label {
+      background-color: rgb(233, 225, 225);
+      color: rgb(158, 146, 146);
+    }
+
+    .radio input:checked~label {
+      background-color: salmon;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- component -->
+  <div class="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
+    <div class="container max-w-screen-lg mx-auto">
+      <div>
+        <h2 class="font-semibold text-xl text-gray-600">House Rent Predictions</h2>
+        <p class="text-gray-500 mb-6">A Machine Learning project</p>
+
+        <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+          <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
+            <div class="text-gray-600">
+              <p class="font-medium text-lg">Area Details</p>
+              <p>Please fill out all the fields.</p>
+              <img src="https://www.ad4travel.com/wp-content/uploads/2017/01/Real-Estate-SEO.jpg" alt="">
+            </div>
+
+            <div class="lg:col-span-2">
+              <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+                <div class="md:col-span-5">
+                  <label for="area_name" class="block text-gray-700 text-sm lg:text-base font-semibold mb-2">Area Name</label>
+                  <input type="text" name="area_name" id="area_name"
+                    class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" />
+                </div>
+
+                <div class="md:col-span-5">
+                  <form>
+                   
+                      <div class="mb-2">
+                        <label for="entry" class="block text-gray-700 text-sm lg:text-base font-semibold mb-2">
+                          BHK
+                        </label>
+                        <div class="w-full">
+                          <div class="grid grid-cols-6 xl:grid-cols-12 gap-2 w-full">
+                            <div class="inline-block radio">
+                              <input name="answer" type="radio" id="B1" hidden="hidden" value="1" />
+                              <label for="B1"
+                                class="px-2 py-1 rounded-lg flex justify-center items-center">
+                                1
+                              </label>
+                            </div>
+                            <div class="inline-block radio">
+                              <input name="answer" type="radio" id="C1" hidden="hidden" value="2" />
+                              <label for="C1"
+                                class="px-2 py-1 rounded-lg flex justify-center items-center">
+                                2
+                              </label>
+                            </div>
+                            <div class="inline-block radio">
+                              <input name="answer" type="radio" id="D1" hidden="hidden" value="3" />
+                              <label for="D1"
+                                class="px-2 py-1 rounded-lg flex justify-center items-center">
+                                3
+                              </label>
+                            </div>
+                            <div class="inline-block radio">
+                              <input name="answer" type="radio" id="E1" hidden="hidden" value="4" />
+                              <label for="E1"
+                                class="px-2 py-1 rounded-lg flex justify-center items-center">
+                                4
+                              </label>
+                            </div>
+                            <div class="inline-block radio">
+                              <input name="answer" type="radio" id="F1" hidden="hidden" value="5" />
+                              <label for="F1"
+                                class="px-2 py-1 rounded-lg flex justify-center items-center">
+                                5
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                 <!--End of BHK-->
+                 <div class="mb-2">
+                  <label for="entry" class="block text-gray-700 text-sm lg:text-base font-semibold mb-2">
+                    BATH
+                  </label>
+                  <div class="w-full">
+                    <div class="grid grid-cols-6 xl:grid-cols-12 gap-2 w-full">
+                      <div class="inline-block radio">
+                        <input name="answer" type="radio" id="B1" hidden="hidden" value="1" />
+                        <label for="B1"
+                          class="px-2 py-1 rounded-lg flex justify-center items-center">
+                          1
+                        </label>
+                      </div>
+                      <div class="inline-block radio">
+                        <input name="answer" type="radio" id="C1" hidden="hidden" value="2" />
+                        <label for="C1"
+                          class="px-2 py-1 rounded-lg flex justify-center items-center">
+                          2
+                        </label>
+                      </div>
+                      <div class="inline-block radio">
+                        <input name="answer" type="radio" id="D1" hidden="hidden" value="3" />
+                        <label for="D1"
+                          class="px-2 py-1 rounded-lg flex justify-center items-center">
+                          3
+                        </label>
+                      </div>
+                      <div class="inline-block radio">
+                        <input name="answer" type="radio" id="E1" hidden="hidden" value="4" />
+                        <label for="E1"
+                          class="px-2 py-1 rounded-lg flex justify-center items-center">
+                          4
+                        </label>
+                      </div>
+                      <div class="inline-block radio">
+                        <input name="answer" type="radio" id="F1" hidden="hidden" value="5" />
+                        <label for="F1"
+                          class="px-2 py-1 rounded-lg flex justify-center items-center">
+                          5
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                  </form>
+                </div>
+
+
+
+                <div class="md:col-span-5">
+                  <label for="location" class="block text-gray-700 text-sm lg:text-base font-semibold mb-2">Locations</label>
+                  <select class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" name="" id="location">
+                    <option value="Choose a Location">Choose a Location</option>
+                    <option value="Meoulvibazar">Meoulvibazar</option>
+                    <option value="Sylhet">Sylhet</option>
+                  </select>
+
+                </div>
+
+                <div class="md:col-span-3 text-right">
+                  <div class="inline-flex items-end">
+                    <button class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Estomate
+                      Price</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</body>
+
+</html>
