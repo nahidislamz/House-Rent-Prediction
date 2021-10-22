@@ -22,153 +22,213 @@
 
 <body>
   <!-- component -->
-  <div class="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
-    <div class="container max-w-screen-lg mx-auto">
-      <div>
-        <h2 class="font-semibold text-xl text-gray-600">House Rent Predictions</h2>
-        <p class="text-gray-500 mb-6">A Machine Learning project</p>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
+      <div class="container max-w-screen-lg mx-auto">
+        <div>
+          <h2 class="font-semibold text-xl text-gray-600">House Rent Predictions</h2>
+          <p class="text-gray-500 mb-6">A Machine Learning project</p>
 
-        <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
-          <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
-            <div class="text-gray-600">
-              <p class="font-medium text-lg">Area Details</p>
-              <p>Please fill out all the fields.</p>
-              <img src="https://www.ad4travel.com/wp-content/uploads/2017/01/Real-Estate-SEO.jpg" alt="">
-            </div>
+          <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+            <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
+              <div class="text-gray-600">
+                <p class="font-medium text-lg">Area Details</p>
+                <p>Please fill out all the fields.</p>
+                <img src="https://www.ad4travel.com/wp-content/uploads/2017/01/Real-Estate-SEO.jpg" alt="">
+              </div>
 
-            <div class="lg:col-span-2">
-              <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
-                <div class="md:col-span-5">
-                  <label for="area_name" class="block text-gray-700 text-sm lg:text-base font-semibold mb-2">Area Name</label>
-                  <input type="text" name="area_name" id="area_name"
-                    class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" />
-                </div>
 
-                <div class="md:col-span-5">
-                  <form>
-                   
-                      <div class="mb-2">
-                        <label for="entry" class="block text-gray-700 text-sm lg:text-base font-semibold mb-2">
-                          BHK
-                        </label>
-                        <div class="w-full">
-                          <div class="grid grid-cols-6 xl:grid-cols-12 gap-2 w-full">
-                            <div class="inline-block radio">
-                              <input name="answer" type="radio" id="B1" hidden="hidden" value="1" />
-                              <label for="B1"
-                                class="px-2 py-1 rounded-lg flex justify-center items-center">
-                                1
-                              </label>
-                            </div>
-                            <div class="inline-block radio">
-                              <input name="answer" type="radio" id="C1" hidden="hidden" value="2" />
-                              <label for="C1"
-                                class="px-2 py-1 rounded-lg flex justify-center items-center">
-                                2
-                              </label>
-                            </div>
-                            <div class="inline-block radio">
-                              <input name="answer" type="radio" id="D1" hidden="hidden" value="3" />
-                              <label for="D1"
-                                class="px-2 py-1 rounded-lg flex justify-center items-center">
-                                3
-                              </label>
-                            </div>
-                            <div class="inline-block radio">
-                              <input name="answer" type="radio" id="E1" hidden="hidden" value="4" />
-                              <label for="E1"
-                                class="px-2 py-1 rounded-lg flex justify-center items-center">
-                                4
-                              </label>
-                            </div>
-                            <div class="inline-block radio">
-                              <input name="answer" type="radio" id="F1" hidden="hidden" value="5" />
-                              <label for="F1"
-                                class="px-2 py-1 rounded-lg flex justify-center items-center">
-                                5
-                              </label>
-                            </div>
+
+              <div class="lg:col-span-2">
+                <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+                  <div class="md:col-span-5">
+                    <label for="area_size" class="block text-gray-700 text-sm lg:text-base font-semibold mb-2">Area
+                      (Square Feet)</label>
+                    <input type="text" name="area_size" id="area_size"
+                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="1000" />
+                  </div>
+
+                  <div class="md:col-span-5">
+
+                    <div class="mb-2">
+                      <label for="entry" class="block text-gray-700 text-sm lg:text-base font-semibold mb-2">
+                        BHK
+                      </label>
+                      <div class="w-full">
+                        <div class="grid grid-cols-6 xl:grid-cols-12 gap-2 w-full">
+                          <div class="inline-block radio">
+                            <input name="bhk" type="radio" id="B1" hidden="hidden" value="1" />
+                            <label for="B1" class="px-2 py-1 rounded-lg flex justify-center items-center">
+                              1
+                            </label>
+                          </div>
+                          <div class="inline-block radio">
+                            <input name="bhk" type="radio" id="C1" hidden="hidden" value="2" />
+                            <label for="C1" class="px-2 py-1 rounded-lg flex justify-center items-center">
+                              2
+                            </label>
+                          </div>
+                          <div class="inline-block radio">
+                            <input name="bhk" type="radio" id="D1" hidden="hidden" value="3" />
+                            <label for="D1" class="px-2 py-1 rounded-lg flex justify-center items-center">
+                              3
+                            </label>
+                          </div>
+                          <div class="inline-block radio">
+                            <input name="bhk" type="radio" id="E1" hidden="hidden" value="4" />
+                            <label for="E1" class="px-2 py-1 rounded-lg flex justify-center items-center">
+                              4
+                            </label>
+                          </div>
+                          <div class="inline-block radio">
+                            <input name="bhk" type="radio" id="F1" hidden="hidden" value="5" />
+                            <label for="F1" class="px-2 py-1 rounded-lg flex justify-center items-center">
+                              5
+                            </label>
                           </div>
                         </div>
+                      </div>
 
+                    </div>
+                    <!--End of BHK-->
+                    <div class="mb-2">
+                      <label for="entry" class="block text-gray-700 text-sm lg:text-base font-semibold mb-2">
+                        Bathrooms
+                      </label>
+                      <div class="w-full">
+                        <div class="grid grid-cols-6 xl:grid-cols-12 gap-2 w-full">
+                          <div class="inline-block radio">
+                            <input name="bath" type="radio" id="G1" hidden="hidden" value="1" />
+                            <label for="G1" class="px-2 py-1 rounded-lg flex justify-center items-center">
+                              1
+                            </label>
+                          </div>
+                          <div class="inline-block radio">
+                            <input name="bath" type="radio" id="H1" hidden="hidden" value="2" />
+                            <label for="H1" class="px-2 py-1 rounded-lg flex justify-center items-center">
+                              2
+                            </label>
+                          </div>
+                          <div class="inline-block radio">
+                            <input name="bath" type="radio" id="I1" hidden="hidden" value="3" />
+                            <label for="I1" class="px-2 py-1 rounded-lg flex justify-center items-center">
+                              3
+                            </label>
+                          </div>
+                          <div class="inline-block radio">
+                            <input name="bath" type="radio" id="J1" hidden="hidden" value="4" />
+                            <label for="J1" class="px-2 py-1 rounded-lg flex justify-center items-center">
+                              4
+                            </label>
+                          </div>
+                          <div class="inline-block radio">
+                            <input name="bath" type="radio" id="K1" hidden="hidden" value="5" />
+                            <label for="K1" class="px-2 py-1 rounded-lg flex justify-center items-center">
+                              5
+                            </label>
+                          </div>
+                        </div>
                       </div>
-                 <!--End of BHK-->
-                 <div class="mb-2">
-                  <label for="entry" class="block text-gray-700 text-sm lg:text-base font-semibold mb-2">
-                    BATH
-                  </label>
-                  <div class="w-full">
-                    <div class="grid grid-cols-6 xl:grid-cols-12 gap-2 w-full">
-                      <div class="inline-block radio">
-                        <input name="answer" type="radio" id="B1" hidden="hidden" value="1" />
-                        <label for="B1"
-                          class="px-2 py-1 rounded-lg flex justify-center items-center">
-                          1
-                        </label>
-                      </div>
-                      <div class="inline-block radio">
-                        <input name="answer" type="radio" id="C1" hidden="hidden" value="2" />
-                        <label for="C1"
-                          class="px-2 py-1 rounded-lg flex justify-center items-center">
-                          2
-                        </label>
-                      </div>
-                      <div class="inline-block radio">
-                        <input name="answer" type="radio" id="D1" hidden="hidden" value="3" />
-                        <label for="D1"
-                          class="px-2 py-1 rounded-lg flex justify-center items-center">
-                          3
-                        </label>
-                      </div>
-                      <div class="inline-block radio">
-                        <input name="answer" type="radio" id="E1" hidden="hidden" value="4" />
-                        <label for="E1"
-                          class="px-2 py-1 rounded-lg flex justify-center items-center">
-                          4
-                        </label>
-                      </div>
-                      <div class="inline-block radio">
-                        <input name="answer" type="radio" id="F1" hidden="hidden" value="5" />
-                        <label for="F1"
-                          class="px-2 py-1 rounded-lg flex justify-center items-center">
-                          5
-                        </label>
-                      </div>
+
+                    </div>
+                    <!--End of BATH-->
+                  </div>
+
+
+
+                  <div class="md:col-span-5">
+                    <label for="location"
+                      class="block text-gray-700 text-sm lg:text-base font-semibold mb-2">Locations</label>
+                    <select class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" name="location" id="location">
+                      <option disabled="disabled" selected="selected" value="Choose a Location">Choose a Location</option>
+                      {% for i in locations %}
+                      <option value="Electronic City">{{i}}</option>
+                      {% endfor %}
+                    </select>
+
+                  </div>
+
+                  <div class="md:col-span-3 text-right">
+                    <div class="inline-flex items-end">
+                      <button id="buttonmodal" type="submit" class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Estomate
+                        Price</button>
                     </div>
                   </div>
-
                 </div>
-                  </form>
-                </div>
-
-
-
-                <div class="md:col-span-5">
-                  <label for="location" class="block text-gray-700 text-sm lg:text-base font-semibold mb-2">Locations</label>
-                  <select class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" name="" id="location">
-                    <option value="Choose a Location">Choose a Location</option>
-                    <option value="Meoulvibazar">Meoulvibazar</option>
-                    <option value="Sylhet">Sylhet</option>
-                  </select>
-
-                </div>
-
-                <div class="md:col-span-3 text-right">
-                  <div class="inline-flex items-end">
-                    <button class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Estomate
-                      Price</button>
-                  </div>
-                </div>
-
               </div>
+
             </div>
           </div>
         </div>
+
+
       </div>
 
-
     </div>
+
+
+  </form>
+
+        
+  <div class="p-6 mx-4 bg-gray-100">
+    <div class="shadow-md rounded bg-white overflow-hidden relative">
+        <div class="p-3">
+            <div class="block md:flex justify-between">
+                <div>
+                    <h3 class="font-medium">Location: {{location}}</h3>
+                    <p class="text-sm text-gray-500">No. of Bedrooms Hall Kitchen : {{bhk}} </p>
+                    <p class="text-sm text-gray-500">No. of Bathrooms: {{bath}} </p>
+                    <p class="text-sm text-gray-500">Price : {{estimated_price}} </p>
+                </div>
+
+                <div class="">
+                    <div>
+                        <span class="text-sm text-gray-500">01-20-2020 12:30</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+  <!-- component -->
+<!-- This is an example component -->
+
+<!-- component -->
+<!--Open modal button-->
+
+
+<div id="modal"
+  class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-gray-100 bg-opacity-100 transform scale-0 transition-transform duration-300">
+  <!-- Modal content -->
+  <div class="bg-white w-1/2 h-1/2 p-12"> 
+      <!--Close modal button-->
+      <button id="closebutton" type="button" class="focus:outline-none">
+          <!-- Hero icon - close button -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+      </button>
+      <!-- Test content -->
+      <h1>Estimated Price</h1>
+      <p>
+          {{estimated_price}}
+      </p>
   </div>
+</div>
+
+
+<script> 
+  const button = document.getElementById('buttonmodal')
+  const closebutton = document.getElementById('closebutton')
+  const modal = document.getElementById('modal')
+
+  button.addEventListener('click',()=>modal.classList.add('scale-100'))
+  closebutton.addEventListener('click',()=>modal.classList.remove('scale-100'))
+</script>
 </body>
 
 </html>
