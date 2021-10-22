@@ -1,8 +1,11 @@
 from joblib import load
 import json
 import numpy as np
+import os
 
-
+module_dir = os.path.dirname(__file__)  # get current directory
+columns_path = os.path.join(module_dir, 'columns.json')
+model_path = os.path.join(module_dir, 'model.joblib')
 
 __locations = None
 __data_columns = None
@@ -25,20 +28,18 @@ def get_estimated_price(location,sqft,bhk,bath):
 
 
 def load_saved_artifacts():
-    print("loading saved artifacts...start")
     global  __data_columns
     global __locations
 
-    with open("/home/nahidislamz/Public/RentPrediction/home/columns.json", "r") as f:
+    with open(columns_path, "r") as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[3:]  # first 3 columns are sqft, bath, bhk
 
     global __model
     if __model is None:
-        with open('/home/nahidislamz/Public/RentPrediction/home/model.joblib', 'rb') as f:
+        with open(model_path, 'rb') as f:
             __model = load(f)
 
-    print("loading saved artifacts...done")
 
 def get_location_names():
     return __locations
