@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from . import util
 from .models import History
 # Create your views here.
@@ -51,3 +51,9 @@ def historyView(request):
         'history':history
     }
     return render(request,'history.html',context)
+
+
+def history_delete(request, id):
+    history = History.objects.get(id=id)
+    history.delete()
+    return redirect('history')
