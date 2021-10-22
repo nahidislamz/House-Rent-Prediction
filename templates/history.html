@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <title>Rent Predictions History</title>
+
+</head>
+
+<body>  
+  <div class="p-6 bg-gray-100">
+    <div class="p-6 bg-gray-100 flex items-center justify-between">
+      <h1 class="text-3xl text-purple-500 font-bold py-4">Recent History</h1>
+      <a href="{% url 'home' %}" class="text-center bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Go Home</a>
+      </div>
+   
+    {% for  h in history %}
+    <div class="shadow-md my-2 rounded bg-white overflow-hidden relative">
+        <div class="p-3">
+            <div class="block md:flex justify-between">
+                <div>
+                    <h3 class="font-medium">Location: {{h.location}}</h3>
+                    <p class="text-sm text-gray-500">No. of Bedrooms Hall Kitchen : {{h.bedrooms}} </p>
+                    <p class="text-sm text-gray-500">No. of Bathrooms: {{h.bathroom}} </p>
+                    <p class="text-sm text-gray-500">Area (SQFT): {{h.area}} </p>
+                    <p class="text-sm text-gray-500">Price : {{h.estimated_price}} </p>
+                </div>
+
+                <div class="">
+                    <div>
+                        <span class="text-sm text-gray-500">{{h.date_created}}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+
+</body>
+
+</html>

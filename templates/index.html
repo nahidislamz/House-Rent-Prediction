@@ -47,7 +47,7 @@
                     class="block text-gray-700 text-sm lg:text-base font-semibold mb-2">Area
                       (Square Feet)</label>
                     <input type="text" name="area_size" id="area_size"
-                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="1000" />
+                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" required placeholder="1000" />
                   </div>
 
                   <div class="md:col-span-5">
@@ -60,31 +60,31 @@
                       <div class="w-full">
                         <div class="grid grid-cols-6 xl:grid-cols-12 gap-2 w-full">
                           <div class="inline-block radio">
-                            <input name="bhk" type="radio" id="B1" hidden="hidden" value="1" />
+                            <input name="bhk" type="radio" id="B1" hidden="hidden" value="1 required" />
                             <label for="B1" class="px-2 py-1 rounded-lg flex justify-center items-center">
                               1
                             </label>
                           </div>
                           <div class="inline-block radio">
-                            <input name="bhk" type="radio" id="C1" hidden="hidden" value="2" />
+                            <input name="bhk" type="radio" id="C1" hidden="hidden" value="2" required />
                             <label for="C1" class="px-2 py-1 rounded-lg flex justify-center items-center">
                               2
                             </label>
                           </div>
                           <div class="inline-block radio">
-                            <input name="bhk" type="radio" id="D1" hidden="hidden" value="3" />
+                            <input name="bhk" type="radio" id="D1" hidden="hidden" value="3" required />
                             <label for="D1" class="px-2 py-1 rounded-lg flex justify-center items-center">
                               3
                             </label>
                           </div>
                           <div class="inline-block radio">
-                            <input name="bhk" type="radio" id="E1" hidden="hidden" value="4" />
+                            <input name="bhk" type="radio" id="E1" hidden="hidden" value="4" required />
                             <label for="E1" class="px-2 py-1 rounded-lg flex justify-center items-center">
                               4
                             </label>
                           </div>
                           <div class="inline-block radio">
-                            <input name="bhk" type="radio" id="F1" hidden="hidden" value="5" />
+                            <input name="bhk" type="radio" id="F1" hidden="hidden" value="5" required />
                             <label for="F1" class="px-2 py-1 rounded-lg flex justify-center items-center">
                               5
                             </label>
@@ -101,31 +101,31 @@
                       <div class="w-full">
                         <div class="grid grid-cols-6 xl:grid-cols-12 gap-2 w-full">
                           <div class="inline-block radio">
-                            <input name="bath" type="radio" id="G1" hidden="hidden" value="1" />
+                            <input name="bath" type="radio" id="G1" hidden="hidden" value="1" required/>
                             <label for="G1" class="px-2 py-1 rounded-lg flex justify-center items-center">
                               1
                             </label>
                           </div>
                           <div class="inline-block radio">
-                            <input name="bath" type="radio" id="H1" hidden="hidden" value="2" />
+                            <input name="bath" type="radio" id="H1" hidden="hidden" value="2" required/>
                             <label for="H1" class="px-2 py-1 rounded-lg flex justify-center items-center">
                               2
                             </label>
                           </div>
                           <div class="inline-block radio">
-                            <input name="bath" type="radio" id="I1" hidden="hidden" value="3" />
+                            <input name="bath" type="radio" id="I1" hidden="hidden" value="3" required/>
                             <label for="I1" class="px-2 py-1 rounded-lg flex justify-center items-center">
                               3
                             </label>
                           </div>
                           <div class="inline-block radio">
-                            <input name="bath" type="radio" id="J1" hidden="hidden" value="4" />
+                            <input name="bath" type="radio" id="J1" hidden="hidden" value="4" required/>
                             <label for="J1" class="px-2 py-1 rounded-lg flex justify-center items-center">
                               4
                             </label>
                           </div>
                           <div class="inline-block radio">
-                            <input name="bath" type="radio" id="K1" hidden="hidden" value="5" />
+                            <input name="bath" type="radio" id="K1" hidden="hidden" value="5" required/>
                             <label for="K1" class="px-2 py-1 rounded-lg flex justify-center items-center">
                               5
                             </label>
@@ -153,7 +153,7 @@
 
                   <div class="md:col-span-3 text-right">
                     <div class="inline-flex items-end">
-                      <button id="buttonmodal" type="submit" class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Estomate
+                      <button type="submit" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Estomate
                         Price</button>
                     </div>
                   </div>
@@ -172,11 +172,12 @@
 
   </form>
 
-  {% for  h in history %}
+
   
-  <div class="p-6 mx-4 bg-gray-100">
-    <h1 class="text-3xl text-blue-800 font-bold py-4">Recent History</h1>
-    <div class="shadow-md rounded bg-white overflow-hidden relative">
+  <div class="p-6 bg-gray-100">
+    <h1 class="text-3xl text-purple-500 font-bold py-4">Recent History</h1>
+    {% for  h in history %}
+    <div class="shadow-md my-2 rounded bg-white overflow-hidden relative">
         <div class="p-3">
             <div class="block md:flex justify-between">
                 <div>
@@ -196,8 +197,12 @@
 
         </div>
     </div>
+   
+    {% endfor %}
+    <div class="p-6 bg-gray-100 flex items-center justify-center">
+    <a href="{% url 'history' %}" class=" text-center bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">View All History</a>
+    </div>
   </div>
-  {% endfor %}
 
   {% if estimated_price %}
   <div id="modal"
