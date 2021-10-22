@@ -8,6 +8,8 @@ django = "*"
 numpy = "*"
 scikit-learn = "*"
 scipy = "*"
+gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 
